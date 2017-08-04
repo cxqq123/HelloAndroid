@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cx.helloandroid">
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/apple"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/apple"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"> <!-- android 4.0以上的手机，应该禁用硬件加速 -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".WelcomeActivity"></activity>
+    </application>
+
+</manifest>

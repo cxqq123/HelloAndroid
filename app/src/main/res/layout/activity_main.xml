@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.cx.helloandroid.view.TitleView
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <com.example.cx.helloandroid.view.MyListView
+        android:id="@+id/myListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_view"
+        >
+    </com.example.cx.helloandroid.view.MyListView>
+
+    <!--<com.example.cx.helloandroid.view.PowerImageView
+        android:id="@+id/powerImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/konan"
+        app:auto_play="false"
+        />
+        &lt;!&ndash;自定义属性 auto_play 为false&ndash;&gt;-->
+
+    <!--<com.example.cx.helloandroid.view.CounterView-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:visibility="visible"-->
+        <!--/>-->
+</RelativeLayout>
