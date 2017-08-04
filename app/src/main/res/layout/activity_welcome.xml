@@ -4,18 +4,6 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="跳过"
-            android:textColor="#fff"
-            android:textSize="8pt"/>
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
@@ -23,4 +11,35 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@mipmap/icx_welcome" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_tiaoguo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="20dp"
+            android:text="跳过"
+            android:textColor="#fff"
+            android:textSize="6pt" />
+
+        <TextView
+            android:id="@+id/tv_showTimeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="35dp"
+            android:textColor="#fff"
+            android:text="3"
+            android:textSize="6pt" />
+    </RelativeLayout>
+
 </FrameLayout>

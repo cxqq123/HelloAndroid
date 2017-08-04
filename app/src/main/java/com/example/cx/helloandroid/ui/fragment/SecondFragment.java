@@ -9,15 +9,11 @@ import android.view.ViewGroup;
 
 import com.example.cx.helloandroid.R;
 
-/**
- * Created by cx on 2017/8/4.
- */
-
-public class MainFragment extends Fragment{
+public class SecondFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View mainFragment=inflater.inflate(R.layout.fragment_main,null);
-        return mainFragment;
+        View secondFragment=inflater.inflate(R.layout.fragment_second,null);
+        return secondFragment;
     }
 }
