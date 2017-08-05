@@ -18,7 +18,7 @@ public class SettingFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View secondFragment=inflater.inflate(R.layout.fragment_second,null);
+        View secondFragment=inflater.inflate(R.layout.fragment_setting,null);
         return secondFragment;
     }
 }

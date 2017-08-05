@@ -1,13 +1,12 @@
 package com.example.cx.helloandroid.activity;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 
 import com.example.cx.helloandroid.R;
 import com.example.cx.helloandroid.ui.fragment.MainFragment;
@@ -15,19 +14,15 @@ import com.example.cx.helloandroid.ui.fragment.SecondFragment;
 import com.example.cx.helloandroid.ui.fragment.SettingFragment;
 import com.example.cx.helloandroid.ui.fragment.ThirdFragment;
 
-import java.util.List;
-
 public class ContentActivity extends Activity {
 
-    private RelativeLayout rlContainter;
+    private FrameLayout rlContainter;
     private RadioGroup rdgAll;
     private RadioButton rbVideos;
     private RadioButton rbNovel;
     private RadioButton rbCartoon;
     private RadioButton rbMine;
 
-    private List<Fragment> fragments;
-    private int currentIndex=0;
 
     private MainFragment mainFragment;
     private SecondFragment secondFragment;
@@ -48,7 +43,7 @@ public class ContentActivity extends Activity {
 
     public void initView() {
 
-        rlContainter = (RelativeLayout) findViewById(R.id.rl_containter);
+        rlContainter = (FrameLayout) findViewById(R.id.rl_containter);
         rdgAll = (RadioGroup) findViewById(R.id.rdg_all);
         rbVideos = (RadioButton) findViewById(R.id.rb_videos);
         rbNovel = (RadioButton) findViewById(R.id.rb_novel);

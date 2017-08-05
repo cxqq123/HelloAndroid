@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <FrameLayout
         android:id="@+id/rl_containter"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,31 +16,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/colorWhite">
 
         <RadioButton
             android:id="@+id/rb_videos"
             style="@style/rb_style"
             android:checked="true"
-            android:drawableTop="@mipmap/apple"
-            android:text="视频" />
+            android:drawableTop="@drawable/icx_navi_channel_selector"
+            android:text="频道" />
 
         <RadioButton
             android:id="@+id/rb_novel"
             style="@style/rb_style"
-            android:drawableTop="@mipmap/apple"
-            android:text="小说" />
+            android:drawableTop="@drawable/icx_navi_sub_selector"
+            android:text="订阅" />
 
         <RadioButton
             android:id="@+id/rb_cartoon"
             style="@style/rb_style"
-            android:drawableTop="@mipmap/apple"
-            android:text="漫画" />
+            android:drawableTop="@drawable/icx_new_navi_discover_selector"
+            android:text="发现" />
 
         <RadioButton
             android:id="@+id/rb_mine"
             style="@style/rb_style"
-            android:drawableTop="@mipmap/apple"
-            android:text="我的" />
+            android:drawableTop="@drawable/icx_navi_profile_selector"
+            android:text="我" />
     </RadioGroup>
 </LinearLayout>

@@ -19,6 +19,5 @@
         <item name="android:paddingBottom">2dp</item>
         <item name="android:paddingTop">2dp</item>
         <item name="android:textColor">@drawable/text_color</item>
-
     </style>
 </resources>
