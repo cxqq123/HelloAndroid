@@ -42,11 +42,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.addJavascriptInterface(this,"wv");
-        webView.loadUrl("file:///android_asset/js_webView.html");
+        webView.getSettings().setJavaScriptEnabled(true);  //webView中设置可以调用js
+        webView.addJavascriptInterface(this,"wv"); //传递参数 （可以在js代码中写 wv.sayHello("msg")）这段话
+        webView.loadUrl("file:///android_asset/js_webView.html"); //加载本地中的html网页中的js代码
     }
 
+    //使用js调用Android中的方法
     @JavascriptInterface
     public void sayHello(String msg){
         Toast.makeText(MainActivity.this,"JsInterface--"+msg,Toast.LENGTH_SHORT).show();
