@@ -11,14 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"> <!-- android 4.0以上的手机，应该禁用硬件加速 -->
         <activity android:name=".MainActivity" />
-        <activity android:name=".activity.WelcomeActivity">
+        <activity android:name=".activity.WelcomeActivity"/>
+        <activity android:name=".activity.ContentActivity" />
+        <activity android:name=".activity.DBActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ContentActivity" />
     </application>
 
 </manifest>

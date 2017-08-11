@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cx.helloandroid.model.ModelBook;
+import com.example.cx.helloandroid.model.ModelPen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +29,10 @@ public class DBManager {
     public boolean hasBook(int bookID){
         Cursor c=db.rawQuery("select * from tb_Book where bookID=?",new String[]{bookID+" "});
         if(c!=null && c.moveToNext()){
+            c.close();
             return true;
         }else{
+            c.close();
             return false;
         }
     }
@@ -97,4 +100,76 @@ public class DBManager {
         db.execSQL("delete from tb_book where bookID="+bookID);
     }
     /////////////////////////////////tb_book操作/////////////////////////////////////
+
+
+    /////////////////////////////////tb_pen操作//////////////////////////////////////
+
+    //TODO 根据笔的ID查看是否有这支笔
+    public boolean hasPen(int penID) {
+        Cursor cursor = db.rawQuery("select * from tb_pen where penID=?",new String[]{" "+penID});
+        if(cursor!=null && cursor.moveToNext()){
+            cursor.close();
+            return true;
+        }else{
+            cursor.close();
+            return false;
+        }
+    }
+
+    public void addPen(ModelPen modelPen){
+        Cursor cursor=null;
+        if(modelPen!=null){
+            int penID=modelPen.penID;
+            String name=modelPen.name;
+            int price=modelPen.price;
+            String size=modelPen.size;
+            cursor=db.rawQuery("insert into tb_pen(penID,name,price,size)",new String[]{""+penID,name,""+price,size});
+        }
+        cursor.close();
+    }
+
+    public void updatePen(ModelPen modelPen){
+        int penID=modelPen.penID;
+        String name=modelPen.name;
+        int price=modelPen.price;
+        String size=modelPen.size;
+        db.execSQL("update tb_pen set penID=? ,name=?,price=?,size=?",new Object[]{penID,name,price,size});
+    }
+
+    public ModelPen getDefaultPen(String penName){
+        ModelPen pen=new ModelPen();
+        Cursor cursor=db.rawQuery("select * from tb_pen where name=?",new String[]{penName});
+        if(cursor!=null){
+            pen.penID=cursor.getInt(cursor.getColumnIndex("penID"));
+            pen.name=cursor.getString(cursor.getColumnIndex("name"));
+            pen.price=cursor.getInt(cursor.getColumnIndex("price"));
+            pen.size=cursor.getString(cursor.getColumnIndex("size"));
+        }
+        cursor.close();
+        return pen;
+    }
+
+    public List<ModelPen> getAllPen(){
+        List<ModelPen> list=new ArrayList<>();
+        Cursor cursor=db.rawQuery("select * from tb_pen order by price desc",null);
+        if(cursor!=null && cursor.moveToNext()){
+            while(cursor.moveToNext()){
+                ModelPen pen=new ModelPen();
+                pen.penID=cursor.getInt(cursor.getColumnIndex("penID"));
+                pen.name=cursor.getString(cursor.getColumnIndex("name"));
+                pen.price=cursor.getInt(cursor.getColumnIndex("price"));
+                pen.size=cursor.getString(cursor.getColumnIndex("size"));
+                list.add(pen);
+            }
+        }
+        cursor.close();
+        return list;
+    }
+
+    public void deletePen(String name){
+        db.execSQL("delete from tb_pen where name=?"+name);
+    }
+
+    ///////////////////////////tb_pen操作////////////////////////////////
+
 }
