@@ -14,6 +14,9 @@ import com.example.cx.helloandroid.ui.fragment.SecondFragment;
 import com.example.cx.helloandroid.ui.fragment.SettingFragment;
 import com.example.cx.helloandroid.ui.fragment.ThirdFragment;
 
+/**
+ *   ContentActivity 模块 -->4个Fragment在Activity中跳转
+ */
 public class ContentActivity extends Activity {
 
     private FrameLayout rlContainter;

@@ -13,6 +13,9 @@ import android.widget.TextView;
 import com.example.cx.helloandroid.R;
 import com.example.cx.helloandroid.utils.ToastUtils;
 
+/**
+ * WelcomeActivity 模块 -->用来展现欢迎界面 （跳转3s倒计时到主界面）
+ */
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView imageView;

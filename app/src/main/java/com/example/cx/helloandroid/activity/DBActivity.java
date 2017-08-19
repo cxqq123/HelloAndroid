@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import com.example.cx.helloandroid.R;
 
+/**
+ * DBActivity 模块--> 操纵db文件，数据库
+ */
 public class DBActivity extends AppCompatActivity {
 
     @Override
