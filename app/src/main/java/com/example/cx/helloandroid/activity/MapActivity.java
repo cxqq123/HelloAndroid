@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.cx.helloandroid.R;
@@ -30,7 +32,9 @@ public class MapActivity extends AppCompatActivity {
     private TextView positionTextView;
     private LocationManager locationManager;
     private String provider;
+    private Button btnGetJWD;
 
+    private Location location;
     private Context mContext;
 
     @Override
@@ -39,41 +43,59 @@ public class MapActivity extends AppCompatActivity {
         setContentView(R.layout.activity_map);
         mContext = MapActivity.this;
         positionTextView = (TextView) findViewById(R.id.position_text_view);
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        //获取所有可用的位置提供器
-        List<String> providerList = locationManager.getProviders(true);
-        if (providerList.contains(LocationManager.GPS_PROVIDER)) {
-            provider = LocationManager.GPS_PROVIDER;
-        } else if (providerList.contains(LocationManager.NETWORK_PROVIDER)) {
-            provider = LocationManager.NETWORK_PROVIDER;
-        } else {
-            //当没有可用的位置提供器时，弹出Toast提示用户
-            ToastUtils.makeTextShort(mContext, "No Location provider to Use");
-        }
+        btnGetJWD = (Button) findViewById(R.id.btn_getJWD);
+
+        btnGetJWD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                //获取所有可用的位置提供器
+                List<String> providerList = locationManager.getProviders(true);
+                if (providerList.contains(LocationManager.GPS_PROVIDER)) {
+                    provider = LocationManager.GPS_PROVIDER;
+                    ToastUtils.makeTextShort(mContext,"GPS Provider");
+                } else if (providerList.contains(LocationManager.NETWORK_PROVIDER)) {
+                    provider = LocationManager.NETWORK_PROVIDER;
+                    ToastUtils.makeTextShort(mContext,"NETWORK Provider");
+                }
+                else {
+                    //当没有可用的位置提供器时，弹出Toast提示用户
+                    ToastUtils.makeTextShort(mContext, "No Location provider to Use");
+                }
 
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
+                if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) || locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                    //android 平台为7.0以上时，会使用权限检测
+                    if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) !=
+                            PackageManager.PERMISSION_GRANTED &&
+                            ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
 
-        if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) || locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-            Location location = locationManager.getLastKnownLocation(provider);
-            showLocation(location);
-            locationManager.requestLocationUpdates(provider, 5000, 1,locationListener);  //更新位置的时间，和距离
-        }else{
-            //无法定位：1.提示用户打开定位服务;2、跳转到设置页面
-            ToastUtils.makeTextShort(mContext,"无法定位，请打开定位服务");
-            Intent intent=new Intent();
-            intent.setAction(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            startActivity(intent);
-        }
+                    location= locationManager.getLastKnownLocation(provider);
+                    if(location==null){
+                        location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                        provider=LocationManager.NETWORK_PROVIDER;
+                    }
+                    showLocation(location);
+                    locationManager.requestLocationUpdates(provider, 5000, 1,locationListener);  //更新位置的时间，和距离
+                }else{
+                    //无法定位：1.提示用户打开定位服务;2、跳转到设置页面
+                    ToastUtils.makeTextShort(mContext,"无法定位，请打开定位服务");
+                    Intent intent=new Intent();
+                    intent.setAction(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 
     LocationListener locationListener=new LocationListener() {
@@ -110,7 +132,6 @@ public class MapActivity extends AppCompatActivity {
     private void showLocation(Location location){
         Geocoder gc=new Geocoder(this, Locale.getDefault());
         List<Address> locationList=null;
-
         try {
             if(location!=null){
                 locationList=gc.getFromLocation(location.getLatitude(),location.getLongitude(),1);  //根据经纬度获取 国家，城市，街道

@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -30,20 +31,25 @@
         <activity android:name=".activity.WelcomeActivity" />
         <activity android:name=".activity.ContentActivity" />
         <activity android:name=".activity.DBActivity" />
-        <activity android:name=".activity.MapActivity" />
+        <activity android:name=".activity.MapActivity"></activity>
         <activity android:name="com.google.zxing.activity.CaptureActivity" />
-        <activity android:name=".activity.ScanCodeActivity"></activity>
+        <activity android:name=".activity.ScanCodeActivity" />
         <activity
             android:name=".activity.StatusActivity"
             android:theme="@style/AppTheme.No">
 
-        </activity>
-        <activity android:name=".activity.AnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.AnimationActivity" />
+        <activity android:name=".activity.T9Activity" />
+        <activity android:name=".activity.SensorActivity"></activity>
+        <activity android:name=".activity.BitmapCacheActivity" />
+        <activity android:name=".activity.TextViewActivity">
+
         </activity>
     </application>
 

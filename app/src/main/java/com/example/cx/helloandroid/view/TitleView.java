@@ -26,8 +26,8 @@ public class TitleView extends FrameLayout{
     public TitleView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.title,this);
-        titleText=findViewById(R.id.title_text);
-        image_Back=findViewById(R.id.image);
+        titleText= (TextView) findViewById(R.id.title_text);
+        image_Back= (ImageButton) findViewById(R.id.image);
 
         image_Back.setOnClickListener(new OnClickListener() {
             @Override

@@ -58,8 +58,8 @@ public class AdapterListView extends BaseAdapter{
         if(view==null){
             view = View.inflate(mContext, R.layout.my_list_view_item, null);
             holder=new PowerViewHolder();
-            holder.powerImageView=view.findViewById(R.id.power_view);
-            holder.tv_text=view.findViewById(R.id.tv_text);
+            holder.powerImageView= (PowerImageView) view.findViewById(R.id.power_view);
+            holder.tv_text= (TextView) view.findViewById(R.id.tv_text);
             view.setTag(holder);
         }else{
             holder=(PowerViewHolder) view.getTag();
