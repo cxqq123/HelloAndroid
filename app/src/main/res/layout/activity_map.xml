@@ -3,15 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="@drawable/bg_activity_help">
+    </ImageView>
+
+    <com.example.cx.helloandroid.view.TitleView
+        android:id="@+id/title_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </com.example.cx.helloandroid.view.TitleView>
 
     <TextView
         android:id="@+id/position_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sfas"
+        android:text="show location message"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
         />
-
 
     <Button
         android:id="@+id/btn_getJWD"
@@ -19,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="170dp"
         android:text="获取经纬度"/>
 
 </LinearLayout>

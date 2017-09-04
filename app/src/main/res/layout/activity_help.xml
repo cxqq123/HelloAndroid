@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_activity_help"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        >
+    </ImageView>
+
+    <Button
+        android:id="@+id/btn_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Map原生定位"
+        android:textColor="@color/colorWhite"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/btn_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="透明式状态栏"
+        android:textColor="@color/colorWhite"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/btn_scan_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="二维码"
+        android:textColor="@color/colorWhite"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/btn_water_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@null"
+        android:textColor="@color/colorWhite"
+        android:text="自定义View--水波纹效果" />
+
+    <Button
+        android:id="@+id/btn_photoview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="自定义ImageView--PhotoView"
+        android:textColor="@color/colorWhite"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/btn_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="传感器"
+        android:textColor="@color/colorWhite"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/btn_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="属性动画效果"
+        android:textColor="@color/colorWhite"
+        android:background="@null"
+        />
+
+    <Button
+        android:id="@+id/btn_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="WebView Demo"
+        android:textColor="@color/colorWhite"
+        android:background="@null"
+        />
+
+</LinearLayout>

@@ -1,1 +1,1 @@
-include ':app', ':webviewdemo'
+include ':app', ':webviewdemo', ':izddemo'

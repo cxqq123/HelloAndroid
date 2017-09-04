@@ -12,13 +12,14 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.cx.helloandroid.R;
 import com.example.cx.helloandroid.utils.ToastUtils;
+import com.example.cx.helloandroid.view.TitleView;
 
 import java.io.IOException;
 import java.util.List;
@@ -27,7 +28,7 @@ import java.util.Locale;
 /**
  *  MapActivity 模块 -->用来实现地理位置，经纬度的展现
  */
-public class MapActivity extends AppCompatActivity {
+public class MapActivity extends ActivtyBase {
 
     private TextView positionTextView;
     private LocationManager locationManager;
@@ -36,14 +37,21 @@ public class MapActivity extends AppCompatActivity {
 
     private Location location;
     private Context mContext;
+    private TitleView titleMap;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+    public int gerLayoutId() {
+        return R.layout.activity_map;
+    }
+
+    @Override
+    public void initBaseView() {
         mContext = MapActivity.this;
         positionTextView = (TextView) findViewById(R.id.position_text_view);
         btnGetJWD = (Button) findViewById(R.id.btn_getJWD);
+        titleMap = (TitleView) findViewById(R.id.title_map);
+
+        titleMap.setTitleText("MapActivity");
 
         btnGetJWD.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,4 +170,13 @@ public class MapActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode== KeyEvent.KEYCODE_BACK){
+            finish();
+            return false;
+        }else{
+            return super.onKeyDown(keyCode, event);
+        }
+    }
 }

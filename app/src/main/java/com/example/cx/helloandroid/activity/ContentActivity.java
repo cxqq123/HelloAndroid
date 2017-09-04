@@ -32,6 +32,7 @@ public class ContentActivity extends Activity {
     private ThirdFragment thirdFragment;
     private SettingFragment settingFragment;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +53,9 @@ public class ContentActivity extends Activity {
         rbNovel = (RadioButton) findViewById(R.id.rb_novel);
         rbCartoon = (RadioButton) findViewById(R.id.rb_cartoon);
         rbMine = (RadioButton) findViewById(R.id.rb_mine);
-
-       switchFragment(0);
+        switchFragment(0);
         setListener();
+//        new MyThread().start();
     }
 
     public void setListener() {
@@ -124,5 +125,17 @@ public class ContentActivity extends Activity {
             transaction.hide(settingFragment);
         }
     }
+
+//    class MyThread extends Thread{
+//        @Override
+//        public void run() {
+//            try {
+//                Thread.sleep(2000);
+//                rdgAll.setVisibility(View.GONE);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
 }

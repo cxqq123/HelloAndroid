@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.cx.helloandroid.view.TitleView
+        android:id="@+id/youku_title_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.example.cx.helloandroid.view.TitleView>
+
+    <WebView
+        android:id="@+id/webView_Youku"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </WebView>
+</LinearLayout>

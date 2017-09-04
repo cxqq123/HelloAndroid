@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import java.util.regex.Pattern;
 
+
+//TextView 识别超链接Util
 public class LinkifySpannableUtils {
 
     public static LinkifySpannableUtils mInstance;
