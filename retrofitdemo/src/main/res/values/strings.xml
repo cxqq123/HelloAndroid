@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RetrofitDemo</string>
+
+    <string name="about">这是一款Material Design风格的新闻阅读App(因为时间原因没有写全,不过会持续更新的)，MVP模式，基于RxJava+Retrofit2进行开发。
+        \n\n新闻模块数据来源于京东万象，图片模块数据来源于百度。
+
+        \n\n主要用到的开源库：RxJava、Retrofit2、Butterknife、Pullloadmorerecyclerview、PhotoView、Glide、Cardview…
+
+        \n\n作者：cx羽
+
+        \n\nGitHub：https://github.com/cxqq123
+
+        \n\nCSDN：http://blog.csdn.net/m0_37094131?viewmode=contents\n\n
+
+        </string>
+</resources>
