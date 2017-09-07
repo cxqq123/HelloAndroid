@@ -1,5 +1,7 @@
 package com.cx.retrofitdemo.base;
 
+import com.cx.retrofitdemo.retrofit.ApiService;
+
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -13,6 +15,8 @@ import rx.subscriptions.CompositeSubscription;
 public class BasePresenter<V>{
 
     public V mvpView;
+
+    protected ApiService apiService;
     private CompositeSubscription mComposite;
 
     //依附于View
