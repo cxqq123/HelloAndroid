@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.cx.helloandroid.R;
 import com.example.cx.helloandroid.utils.ToastUtils;
+import com.example.cx.helloandroid.view.TitleView;
 import com.google.zxing.WriterException;
 import com.google.zxing.activity.CaptureActivity;
 import com.google.zxing.encoding.EncodingHandler;
@@ -41,6 +42,8 @@ public class ScanCodeActivity extends AppCompatActivity {
     private Button btnBuildCode;
     private ImageView ivShowCode;
     private Bitmap bitmap; //生成的二维码图片
+    private TitleView title;
+
 
 
     @Override
@@ -52,7 +55,16 @@ public class ScanCodeActivity extends AppCompatActivity {
         etUrl = (EditText) findViewById(R.id.etUrl);
         btnBuildCode = (Button) findViewById(R.id.btnBuildCode);
         ivShowCode = (ImageView) findViewById(R.id.ivShowCode);
+        title = (TitleView) findViewById(R.id.title);
 
+        title.setLeftButtonListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        title.setTitleText("扫描二维码功能");
         btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

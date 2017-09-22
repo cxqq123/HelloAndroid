@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <com.example.cx.helloandroid.view.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.example.cx.helloandroid.view.TitleView>
+
     <Button
         android:id="@+id/btnScan"
         android:layout_width="match_parent"

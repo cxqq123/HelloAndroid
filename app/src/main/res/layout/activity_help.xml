@@ -86,4 +86,14 @@
         android:background="@null"
         />
 
+    <Button
+        android:id="@+id/btn_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="欢迎界面"
+        android:textColor="@color/colorWhite"
+        android:background="@null"
+        />
+
 </LinearLayout>

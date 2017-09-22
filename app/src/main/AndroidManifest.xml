@@ -29,8 +29,7 @@
         android:theme="@style/AppTheme"> <!-- android 4.0以上的手机，应该禁用硬件加速 -->
         <activity android:name=".MainActivity" />
         <activity android:name=".activity.WelcomeActivity" />
-        <activity android:name=".activity.ContentActivity">
-        </activity>
+        <activity android:name=".activity.ContentActivity" />
         <activity android:name=".activity.DBActivity" />
         <activity android:name=".activity.MapActivity" />
         <activity android:name="com.google.zxing.activity.CaptureActivity" />
@@ -44,15 +43,19 @@
         <activity android:name=".activity.BitmapCacheActivity" />
         <activity android:name=".activity.TextViewActivity" />
         <activity android:name=".activity.HelpActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activity.WaterViewActivity" />
         <activity android:name=".activity.PhotoViewActivity" />
-        <activity android:name=".webfragment.WebActivity"></activity>
+        <activity android:name=".webfragment.WebActivity" />
+        <activity android:name=".activity.LayoutParamsActivity" />
+        <activity android:name=".webfragment.WebTwoActivity"></activity>
+        <activity android:name=".activity.CareActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

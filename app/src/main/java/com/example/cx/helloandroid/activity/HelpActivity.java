@@ -20,6 +20,8 @@ public class HelpActivity extends ActivtyBase implements View.OnClickListener{
     private Button btnSensor;
     private Button btnAnim;
     private Button btnWeb;
+    private Button btnWelcome;
+
 
 
     @Override
@@ -42,6 +44,8 @@ public class HelpActivity extends ActivtyBase implements View.OnClickListener{
         btnSensor = (Button) findViewById(R.id.btn_sensor);
         btnAnim = (Button) findViewById(R.id.btn_anim);
         btnWeb = (Button) findViewById(R.id.btn_web);
+        btnWelcome = (Button) findViewById(R.id.btn_welcome);
+
 
         btnMap.setOnClickListener(this);
         btnStatus.setOnClickListener(this);
@@ -51,6 +55,7 @@ public class HelpActivity extends ActivtyBase implements View.OnClickListener{
         btnSensor.setOnClickListener(this);
         btnAnim.setOnClickListener(this);
         btnWeb.setOnClickListener(this);
+        btnWelcome.setOnClickListener(this);
 
     }
 
@@ -85,6 +90,9 @@ public class HelpActivity extends ActivtyBase implements View.OnClickListener{
                 break;
             case R.id.btn_web:
                 openActivity(WebActivity.class);
+                break;
+            case R.id.btn_welcome:
+                openActivity(WelcomeActivity.class);
                 break;
         }
     }

@@ -59,10 +59,10 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void bindData(){
-       // new MyThread().start();
-        Intent intent=new Intent(mContext, ContentActivity.class);
-        startActivity(intent);
-        finish();
+        new MyThread().start();
+//        Intent intent=new Intent(mContext, ContentActivity.class);
+//        startActivity(intent);
+//        finish();
     }
     @Override
     public void onClick(View view) {

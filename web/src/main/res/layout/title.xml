@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/colorAccent">
+
+
+    <RelativeLayout
+        android:id="@+id/image"
+        android:layout_width="40dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        >
+
+        <ImageView
+            android:id="@+id/izd_ivBack"
+            android:layout_width="9dp"
+            android:layout_height="16dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/izd_zdz_zd_back" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="This is Title"
+        android:textColor="#fff"
+        android:textSize="20sp"/>
+</RelativeLayout>

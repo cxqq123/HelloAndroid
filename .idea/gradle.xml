@@ -9,9 +9,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/bmobdemo" />
+            <option value="$PROJECT_DIR$/crashhandlerdemo" />
             <option value="$PROJECT_DIR$/izddemo" />
+            <option value="$PROJECT_DIR$/jnidemo" />
+            <option value="$PROJECT_DIR$/myapplication" />
             <option value="$PROJECT_DIR$/retrofitdemo" />
+            <option value="$PROJECT_DIR$/web" />
             <option value="$PROJECT_DIR$/webviewdemo" />
+            <option value="$PROJECT_DIR$/zxingcodedemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
