@@ -15,4 +15,15 @@ public class ToastUtils {
         Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
     }
 
+    /**
+     * 自定义显示Toast时间
+     *
+     * @param context
+     * @param message
+     * @param duration
+     */
+    public static void show(Context context, CharSequence message, int duration)
+    {
+            Toast.makeText(context, message, duration).show();
+    }
 }

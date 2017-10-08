@@ -1,15 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f00"
+    >
 
     <Button
-        android:id="@+id/btn_care"
-        android:layout_width="wrap_content"
+        android:id="@+id/test_bt"
+        android:layout_width="78dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_ripple_selector"
         android:text="关注"
-        android:layout_centerInParent="true"/>
+        android:layout_margin="13dp" />
+
+    <com.example.cx.helloandroid.view.RippleButtonView
+        android:id="@+id/test_rbv"
+        android:layout_height="wrap_content"
+        android:layout_width="78dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:layout_margin="13dp"
+        android:text="关注" />
 
 
-</RelativeLayout>
+
+        <com.example.cx.helloandroid.view.RevealFollowButton
+            android:id="@+id/test_rfb"
+            android:layout_width="70dp"
+            android:layout_height="27dp"
+            android:layout_margin="13dp"
+            android:background="@drawable/izd_zdcard_care_bg"
+            >
+
+            <ImageView
+                android:id="@+id/izd_iv_care_add"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:visibility="visible"
+                android:background="@drawable/izd_zdcard_care_add"
+                />
+
+            <TextView
+                android:id="@+id/tv_care"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关注"
+                android:layout_marginLeft="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center"
+              />
+
+            <TextView
+                android:id="@+id/tv_already_care"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已关注"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/izd_zdcard_care_already_bg"
+                android:visibility="gone"/>
+
+        </com.example.cx.helloandroid.view.RevealFollowButton>
+</LinearLayout>
