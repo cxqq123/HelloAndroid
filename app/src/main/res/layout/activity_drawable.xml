@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <TextView
         android:id="@+id/txtShow1"
         android:layout_width="100dp"
@@ -28,5 +29,6 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/layerlist_drawable"
         android:text="带灰色阴影的圆角矩形"/>
+
 
 </LinearLayout>
