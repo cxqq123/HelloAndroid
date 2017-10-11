@@ -43,19 +43,19 @@
         <activity android:name=".activity.BitmapCacheActivity" />
         <activity android:name=".activity.TextViewActivity" />
         <activity android:name=".activity.HelpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".activity.WaterViewActivity" />
         <activity android:name=".activity.PhotoViewActivity" />
         <activity android:name=".webfragment.WebActivity" />
         <activity android:name=".activity.LayoutParamsActivity" />
-        <activity android:name=".webfragment.WebTwoActivity"></activity>
-        <activity android:name=".activity.CareActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".webfragment.WebTwoActivity" />
+        <activity android:name=".activity.CareActivity"></activity>
+        <activity android:name=".activity.DrawableActivity"></activity>
     </application>
 
 </manifest>
